@@ -9,6 +9,9 @@ namespace Persistence.Context
         { }
 
         public DbSet<Login> Logins { get; set; }
+        public DbSet<Alumno> Alumnos { get; set; }
+        public DbSet<Aula> Aulas { get; set; }
+        public DbSet<Categoria> Categorias { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

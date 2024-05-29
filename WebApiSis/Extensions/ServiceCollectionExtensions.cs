@@ -10,6 +10,7 @@ namespace WebApi.Extensions
         public static void AddWebApiProject(this IServiceCollection services, IConfiguration configuration)
         {
             SetJwtConfig(services, configuration);
+            SetCors(services);
         }
 
         public static void SetJwtConfig(this IServiceCollection services, IConfiguration configuration)
@@ -32,6 +33,20 @@ namespace WebApi.Extensions
                          Encoding.UTF8.GetBytes(jwtConfig.Key))
                  };
              });
+        }
+
+        public static void SetCors(this IServiceCollection services)
+        {
+            services.AddCors(options =>
+            {
+                options.AddPolicy("AllowSpecificOrigin",
+                    builder =>
+                    {
+                        builder.WithOrigins("http://localhost:4200") // Reemplaza con la URL permitida
+                               .AllowAnyHeader()
+                               .AllowAnyMethod();
+                    });
+            });
         }
     }
 }

@@ -20,7 +20,10 @@ namespace Persistence.Extensions
             public static void AddRepositories(this IServiceCollection services)
             {
                 services.AddTransient<ILoginRepository, LoginRepository>();
-            services.AddTransient<IUnitOfWork, UnitOfWork>();
+                services.AddTransient<IAlumnoRepository, AlumnoRepository>();
+                services.AddTransient<IAulaRepository, AulaRepository>();
+                services.AddTransient<ICategoriaRepository, CategoriaRepository>();
+                services.AddTransient<IUnitOfWork, UnitOfWork>();
             }
         }
 }

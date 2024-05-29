@@ -17,12 +17,17 @@ namespace Application.Extensions
 
             services.AddTransient<ILoginService, LoginService>();
             services.AddTransient<ISeguridadService, SeguridadService>();
-
+            services.AddTransient<IAlumnoService, AlumnoService>();
+            services.AddTransient<IAulaService, AulaService>();
+            services.AddTransient<ICategoriaService, CategoriaService>();
 
             // Aquì damos a enteder que van a trabajar juntos las VALIDACIONES
             services.AddControllersWithViews().AddFluentValidation();
 
             services.AddTransient<IValidator<LoginParametroDto>, LoginParametroDtoValidator>();
+            services.AddTransient<IValidator<AlumnoParametroDto>, AlumnoParametroDtoValidator>();
+            services.AddTransient<IValidator<AulaParametroDto>, AulaParametroDtoValidator>();
+            services.AddTransient<IValidator<CategoriaParametroDto>, CategoriaParametroDtoValidator>();
         }
     }
 }

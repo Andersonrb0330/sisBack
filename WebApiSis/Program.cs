@@ -31,6 +31,7 @@ app.UseHttpsRedirection();
 
 app.UseAuthentication(); // Habilitar la autenticación JWT
 app.UseAuthorization();
+app.UseCors("AllowSpecificOrigin");// Habilitar cors
 
 app.MapControllers();
 
