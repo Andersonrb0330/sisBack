@@ -49,5 +49,11 @@ namespace Persistence.Repositories
                 .FirstOrDefaultAsync(u => u.Email == email && u.Password == password);
             return login;
         }
+
+        public async Task<bool> verificarLogin(int id)
+        {
+            bool verificarLogin = await _sisContext.Logins.AnyAsync(l => l.Id == id);
+            return verificarLogin;
+        }
     }
 }

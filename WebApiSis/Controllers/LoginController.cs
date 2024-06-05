@@ -6,7 +6,6 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace WebApiSis.Controllers
 {
-    [Authorize]
     [Route("api/login")]
     public class LoginController : Controller
     {

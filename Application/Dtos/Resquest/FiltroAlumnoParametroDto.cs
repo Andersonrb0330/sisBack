@@ -1,6 +1,4 @@
-﻿using Domain.Entity;
-
-namespace Application.Dtos.Resquest
+﻿namespace Application.Dtos.Resquest
 {
     public class FiltroAlumnoParametroDto : PaginacionParametroDto
     {

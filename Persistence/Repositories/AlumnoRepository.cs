@@ -28,7 +28,7 @@ namespace Persistence.Repositories
             Alumno alumno = await _sisContext.Alumnos
                 .Include(a => a.Aula)
                 .Include(a => a.Categoria)
-                .FirstAsync(a => a.Id == id);
+                .FirstOrDefaultAsync(a => a.Id == id);
             return alumno;
         }
 
@@ -57,6 +57,12 @@ namespace Persistence.Repositories
         {
             IQueryable<Alumno> alumno = _sisContext.Alumnos.AsQueryable();
             return alumno;
+        }
+
+        public async Task<bool> verificarAlumno(int id)
+        {
+            bool verificarAlumno = await _sisContext.Alumnos.AnyAsync(a => a.Id == id);
+            return verificarAlumno;
         }
     }
 }

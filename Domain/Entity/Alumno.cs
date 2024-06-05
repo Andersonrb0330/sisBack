@@ -15,6 +15,8 @@
         public int IdCategoria { get; set; }
         public virtual Categoria Categoria { get; set; }
 
+        public ICollection<Matricula> Matriculas { get; set; }
+
         public Alumno () { }
     }
 }

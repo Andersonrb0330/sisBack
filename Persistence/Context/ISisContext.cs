@@ -9,6 +9,11 @@ namespace Persistence.Context
         DbSet<Alumno> Alumnos { get; set; }
         DbSet<Aula> Aulas { get; set; }
         DbSet<Categoria> Categorias { get; set; }
+        DbSet<Matricula>Matriculas { get; set; }
+        DbSet<Curso> Cursos { get; set; }
+        DbSet<MaestroDetalle> MaestroDetalles { get; set; }
+
+
         int SaveChanges();
     }
 }

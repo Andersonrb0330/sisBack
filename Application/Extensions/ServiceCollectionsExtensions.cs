@@ -20,6 +20,9 @@ namespace Application.Extensions
             services.AddTransient<IAlumnoService, AlumnoService>();
             services.AddTransient<IAulaService, AulaService>();
             services.AddTransient<ICategoriaService, CategoriaService>();
+            services.AddTransient<IMatriculaService, MatriculaService>();
+            services.AddTransient<ICursoService, CursoService>();
+            services.AddTransient<IMaestroDetalleService, MaestroDetalleService>();
 
             // Aquì damos a enteder que van a trabajar juntos las VALIDACIONES
             services.AddControllersWithViews().AddFluentValidation();
@@ -28,6 +31,10 @@ namespace Application.Extensions
             services.AddTransient<IValidator<AlumnoParametroDto>, AlumnoParametroDtoValidator>();
             services.AddTransient<IValidator<AulaParametroDto>, AulaParametroDtoValidator>();
             services.AddTransient<IValidator<CategoriaParametroDto>, CategoriaParametroDtoValidator>();
+            services.AddTransient<IValidator<MatriculaParametroDto>, MatriculaParametroDtoValidator>();
+            services.AddTransient<IValidator<CursoParametroDto>, CursoParametroDtoValidator>();
+            services.AddTransient<IValidator<MaestroDetalleParametroDto>, MaestroDetalleParametroDtoValidator>();
+
         }
     }
 }

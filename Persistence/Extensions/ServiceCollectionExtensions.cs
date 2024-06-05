@@ -23,6 +23,9 @@ namespace Persistence.Extensions
                 services.AddTransient<IAlumnoRepository, AlumnoRepository>();
                 services.AddTransient<IAulaRepository, AulaRepository>();
                 services.AddTransient<ICategoriaRepository, CategoriaRepository>();
+                services.AddTransient<IMatriculaRepository, MatriculaRepository>();
+                services.AddTransient<ICursoRepository, CursoRepository>();
+                services.AddTransient<IMaestroDetalleRepository, MaestroDetalleRepository>();
                 services.AddTransient<IUnitOfWork, UnitOfWork>();
             }
         }

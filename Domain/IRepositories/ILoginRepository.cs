@@ -10,5 +10,6 @@ namespace Domain.IRepositories
         void Delete(Login login);
         Task<bool> VerificarEmail(string email);
         Task<Login> LoginInfo(string email, string password);
+        Task<bool> verificarLogin(int id);
     }
 }

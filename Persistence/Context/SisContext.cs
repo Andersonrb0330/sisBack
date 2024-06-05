@@ -12,6 +12,9 @@ namespace Persistence.Context
         public DbSet<Alumno> Alumnos { get; set; }
         public DbSet<Aula> Aulas { get; set; }
         public DbSet<Categoria> Categorias { get; set; }
+        public DbSet<Matricula> Matriculas { get; set; }
+        public DbSet<Curso> Cursos { get; set; }
+        public DbSet<MaestroDetalle> MaestroDetalles { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
